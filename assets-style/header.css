@@ -1,0 +1,29 @@
+header{
+    width: 100%;
+    background-color: var(--redbg);
+    padding: 50px 0px;
+    max-width: 100%;
+    text-align: center;
+}
+
+header  ul{
+    list-style: none;
+}
+header nav #menu {
+    display: flex;
+    gap: 30px;
+    width: 250px;
+    margin:0 auto;
+   
+}
+
+div ul li img{
+    width: 70px;
+    height: 70px;
+}
+
+header h1{
+    color: var(--lettersinred);
+    font-size: 65px;
+    
+}

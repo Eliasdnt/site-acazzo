@@ -4,6 +4,7 @@ header{
     padding: 15px 15px;
     height: 80vh;
     border-radius: 0px 0px 90px 90px;
+  
 
 }
 
@@ -30,10 +31,10 @@ header  ul{
     
 }
 
-header .card img{
+/* header .card img{
     width: 45px;
     height: 60px;
-}
+} */
 
 header h1{
     color: var(--lettersinred);

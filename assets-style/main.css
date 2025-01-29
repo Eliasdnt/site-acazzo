@@ -12,9 +12,10 @@
     max-width: 50%;
 }
 
-h1 {
+.content h1 {
     font-size: 48px;
     font-weight: bold;
+    text-align: start;
 }
 
 p {

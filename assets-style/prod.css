@@ -36,13 +36,7 @@ main h1{
 .button {
     display: inline-block;
     padding: 10px;
-    background: var(--darkredbg);
-    color: white;
-    text-decoration: none;
+    color:var(--darkredbg) ;
     border-radius: 5px;
     font-size: 14px;
-}
-
-.button:hover {
-    background: var(--redbg);
 }

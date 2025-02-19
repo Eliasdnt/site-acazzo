@@ -40,3 +40,9 @@ main h1{
     border-radius: 5px;
     font-size: 14px;
 }
+#veja{
+    display: block;
+    color: #000;
+    text-align: center;
+    margin-bottom: 45px;
+}

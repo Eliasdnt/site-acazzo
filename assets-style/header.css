@@ -37,14 +37,14 @@ header  ul{
 } */
 
 header h1{
-    color: var(--lettersinred);
+    color: #000;
     font-size: 105px;
-    font-weight: 300;
+    /* font-weight: 300; */
     padding-top: 60px;
     
 }
 header span{
-    color: var(--lettersinred);
+    color: #000;
     font-size: 17px;
 }
 

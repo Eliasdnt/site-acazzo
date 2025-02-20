@@ -3,9 +3,10 @@
 @import "main.css";
 @import "prod.css";
 @import "highlights.css";
+@import "informs.css";
 :root{
     --darkredbg:#4D0000;
-    --redbg: #662727;
+    --redbg: #FFF5E1;
     --lettersinred: #fff;
     --lettersinwhite: #0a0a0a;
     --fontfamilygeneral: "Space Grotesk", "Poppins", serif;

@@ -1,10 +1,10 @@
 #destaques{
    background-color: var(--redbg);
-   border-radius:5px ;
+   border-radius:50px ;
    padding-bottom: 50px;
 }
 #destaques .destaques-contents{
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -16,19 +16,20 @@
     align-self: center;
 }
 #destaques .destaques-contents span{
- color: #fafafa;
+ color: #000;
 }
 #destaques .destaques-contents h1{
-    color: #fafafa;
+    color: #000;
    }
    #destaques .destaques-contents p{
-    color: #fafafa;
+    color: #000;
    }
 
    #destaques .destaques-contents .destaques-text{
     display: grid;
     grid-template-columns: 1fr;
-    justify-items: flex-start;
+    justify-self: flex-start;
+    align-self: center;
    }
    #destaques .destaques-contents .destaques-text h1{
     margin: 0;
@@ -70,3 +71,33 @@
         background-color: var(--lettersinred);
     }
    
+
+    #destaques .card {
+        max-width: 1600px;
+        color: #fff;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 15px;
+        margin-top:60px;
+    }
+    #destaques  h1{
+        max-width: 1600px;
+        margin: 0 auto;
+        text-align:start;
+        color: #000;
+    }
+
+    #destaques .card li {
+        background-color: var(--darkredbg);
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        padding: 25px 45px;
+        border-radius: 15px;
+
+    }
+
+    #destaques .card li img{
+        width: 40px;
+    }

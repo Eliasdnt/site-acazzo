@@ -77,7 +77,7 @@
         <a id="veja" href="#">Veja Mais Produtos</a>
 
 
-     <div id="destaques">
+     <section id="destaques">
         <div class="destaques-contents">
             <div class="destaques-text">
                 <span>Destaques Importantes</span>
@@ -90,16 +90,107 @@
             </div>
             <div class="img">
                 <img src="img/cadeado.svg" alt="imagem de um cadeado">
-                <p>Segurança <br>
+                <p style="color:#fff;">Segurança <br>
                     Confiabilidade <br> e 
                     Serviços</p>
             </div>
         </div>
+        
+        <h1>Compromissos com:</h1>
+        <ul class="card">
+                <li><img src="img/people.svg" alt="" width="50px"> Pessoas</li>
+                <li><img src="img/system.svg" alt="" width="80px"> Sistema</li>
+                <li><img src="img/process.svg" alt="" width="50px"> Processos</li>
+                <li><img src="img/transparency.svg" alt="" width="50px"> Transparência</li>
+
+            </ul>
+    
+     </section>
+
+     <section class="informs">
+        <div>
+            <h1>Estamos Localizados:</h1>
+  
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4898.11546973733!2d-38.46392862415425!3d-3.8763542439445224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c75a42d58b5769%3A0xd0fc63f296b4788d!2sR.%20Zildenia%2C%201166%20-%20sala%2002%20-%20Guaribas%2C%20Eus%C3%A9bio%20-%20CE%2C%2061769-180!5e1!3m2!1spt-BR!2sbr!4v1740080967219!5m2!1spt-BR!2sbr" width="600" height="600" style="border: 1px solid #010101;  " allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
         </div>
+        <div>
+            <h1>Envie Uma Mensagem para Nós!</h1>
+
+            <form onsubmit="event.preventDefault(); enviarFormulario();">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
+        
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="seuemail@gmail.com" required>
+        
+                <!-- Correção do nome do campo "contato" -->
+                <label for="contato">Contato:</label>
+                <input type="text" id="contato" name="contato" placeholder="+55 (12) 91234-0123" required>
+        
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="10" cols="60"></textarea>
+        
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+     </section>
 
 
     </main>
 </body>
 <script src="main.js"></script>
+
+<script>
+  async function enviarFormulario() {
+  // Captura os valores do formulário
+  const nome = document.getElementById('nome').value;
+  const email = document.getElementById('email').value;
+  const contato = document.getElementById('contato').value;
+  const mensagem = document.getElementById('mensagem').value;
+
+  // Validação básica
+  if (!nome || !email || !mensagem) {
+    alert('Por favor, preencha todos os campos obrigatórios.');
+    return;
+  }
+
+  // Monta o objeto com os dados
+  const dados = {
+    nome: nome,
+    email: email,
+    contato: contato,
+    mensagem: mensagem
+  };
+
+  try {
+    // URL do seu script do Google Apps Script implantado
+    const url = 'https://script.google.com/macros/s/AKfycbyj3sV69IkecHsvMIJOzt0khmBgFkIkMD_JR_5tBfzbYUebeq3j_qjBa_11IoSWZnVruw/exec';
+
+    // Envia os dados para o Google Apps Script
+    const resposta = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+        
+      },
+      body: JSON.stringify(dados)
+    });
+
+    // Trata a resposta
+    const resultado = await resposta.json();
+    if (resultado.sucesso) {
+      alert('Mensagem enviada com sucesso!');
+    } else {
+      alert('Erro ao enviar mensagem: ' + resultado.erro);
+    }
+  } catch (erro) {
+    alert('Erro na comunicação com o servidor: ' + erro.message);
+  }
+}
+</script>
+
+
 
 </html>

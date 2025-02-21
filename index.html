@@ -117,80 +117,65 @@
         <div>
             <h1>Envie Uma Mensagem para Nós!</h1>
 
-            <form onsubmit="event.preventDefault(); enviarFormulario();">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
-        
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" placeholder="seuemail@gmail.com" required>
-        
-                <!-- Correção do nome do campo "contato" -->
-                <label for="contato">Contato:</label>
-                <input type="text" id="contato" name="contato" placeholder="+55 (12) 91234-0123" required>
-        
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="10" cols="60"></textarea>
-        
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
+    <!-- Inclua jQuery e Toastr -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-     </section>
+<!-- Formulário -->
+<form id="meuFormulario" action="https://script.google.com/macros/s/AKfycbz9v_3Tr4FsrevUixF71ie_mmLgtUtEIet6AWGbqSPCv6UnwCS1L_Rv_vWIKngU1HTo/exec" method="post">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="name" placeholder="Seu Nome" required>
 
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" placeholder="seuemail@gmail.com" required>
 
-    </main>
-</body>
-<script src="main.js"></script>
+    <label for="contato">Contato:</label>
+    <input type="text" id="contato" name="phone" placeholder="+55 (12) 91234-0123" required>
+
+    <label for="mensagem">Mensagem:</label>
+    <textarea id="mensagem" name="message" rows="5" required></textarea>
+
+    <button id="button" type="submit">Enviar</button>
+</form>
+
+<!-- Div para exibir a resposta -->
+<div id="response"></div>
 
 <script>
-  async function enviarFormulario() {
-  // Captura os valores do formulário
-  const nome = document.getElementById('nome').value;
-  const email = document.getElementById('email').value;
-  const contato = document.getElementById('contato').value;
-  const mensagem = document.getElementById('mensagem').value;
+// Configuração do Toastr
 
-  // Validação básica
-  if (!nome || !email || !mensagem) {
-    alert('Por favor, preencha todos os campos obrigatórios.');
-    return;
-  }
+const button = document.getElementById("button");
+button.addEventListener("click", () => {
+    const formData = {
+        nome: document.getElementById("nome").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        contato: document.getElementById("contato").value.trim(),
+        mensagem: document.getElementById("mensagem").value.trim()
+    };
 
-  // Monta o objeto com os dados
-  const dados = {
-    nome: nome,
-    email: email,
-    contato: contato,
-    mensagem: mensagem
-  };
-
-  try {
-    // URL do seu script do Google Apps Script implantado
-    const url = 'https://script.google.com/macros/s/AKfycbyj3sV69IkecHsvMIJOzt0khmBgFkIkMD_JR_5tBfzbYUebeq3j_qjBa_11IoSWZnVruw/exec';
-
-    // Envia os dados para o Google Apps Script
-    const resposta = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-        
-      },
-      body: JSON.stringify(dados)
-    });
-
-    // Trata a resposta
-    const resultado = await resposta.json();
-    if (resultado.sucesso) {
-      alert('Mensagem enviada com sucesso!');
+    if (formData.nome && formData.email && formData.contato && formData.mensagem) {
+        toastr.success("A operação foi realizada com sucesso!", "Sucesso", {
+            timeOut: 5000,
+            progressBar: true,
+            closeButton: true,
+        });
     } else {
-      alert('Erro ao enviar mensagem: ' + resultado.erro);
+        toastr.error("Por favor, preencha todos os campos!", "Erro");
     }
-  } catch (erro) {
-    alert('Erro na comunicação com o servidor: ' + erro.message);
-  }
-}
+});
+
+
 </script>
 
+</div>
+
+</section>
+
+
+</main>
+</body>
+<script src="main.js"></script>
 
 
 </html>

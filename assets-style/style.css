@@ -4,6 +4,7 @@
 @import "prod.css";
 @import "highlights.css";
 @import "informs.css";
+@import "form.css";
 :root{
     --darkredbg:#4D0000;
     --redbg: #FFF5E1;

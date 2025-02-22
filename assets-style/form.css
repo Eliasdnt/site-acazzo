@@ -1,0 +1,24 @@
+#myForm{
+    display: grid;
+    grid-template-columns: 1fr ;
+    gap:25px;
+}
+
+#myForm input, textarea{
+    background-color: var(--redbg);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    
+}
+#myForm button{
+    justify-self: left;
+    background-color: var(--darkredbg);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+#myForm input::-moz-focus-inner{
+    
+}

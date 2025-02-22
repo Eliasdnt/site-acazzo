@@ -111,7 +111,7 @@
         <div>
             <h1>Estamos Localizados:</h1>
   
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4898.11546973733!2d-38.46392862415425!3d-3.8763542439445224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c75a42d58b5769%3A0xd0fc63f296b4788d!2sR.%20Zildenia%2C%201166%20-%20sala%2002%20-%20Guaribas%2C%20Eus%C3%A9bio%20-%20CE%2C%2061769-180!5e1!3m2!1spt-BR!2sbr!4v1740080967219!5m2!1spt-BR!2sbr" width="600" height="600" style="border: 1px solid #010101;  " allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4898.11546973733!2d-38.46392862415425!3d-3.8763542439445224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c75a42d58b5769%3A0xd0fc63f296b4788d!2sR.%20Zildenia%2C%201166%20-%20sala%2002%20-%20Guaribas%2C%20Eus%C3%A9bio%20-%20CE%2C%2061769-180!5e1!3m2!1spt-BR!2sbr!4v1740080967219!5m2!1spt-BR!2sbr" width="600" height="500" style="border: 1px solid #010101;  " allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
         </div>
         <div>
@@ -127,43 +127,12 @@
     <input type="text" name="name" placeholder="Nome" required>
     <input type="email" name="email" placeholder="Email" required>
     <input type="tel" name="phone" placeholder="Telefone">
-    <textarea name="message" placeholder="Mensagem" required></textarea>
+    <textarea name="message" placeholder="Mensagem" rows="15" cols="15" required></textarea>
     <button type="submit">Enviar</button>
 </form>
 
 <div id="message"></div>
 
-<script>
-document.getElementById('myForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Impede o envio tradicional
-    
-    const formData = new FormData(this);
-    const url = 'https://script.google.com/macros/s/AKfycbyUk-Fau9fcv14kXLNXhjq44YSgb4fxcPqi3XuZJaXwlL3OfLngXibXAUGMu77apdZq/exec'; // URL do seu Web App publicado
-    
-    fetch(url, {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if(data.status === 'success') {
-            // document.getElementById('message').innerHTML = `
-            //     <div class="success">${data.message}</div>
-            // `;
-            this.reset(); // Limpa o formulário
-            toastr.success(`${data.message}`);
-        } else {
-            throw new Error(data.message);
-        }
-    })
-    .catch(error => {
-        document.getElementById('message').innerHTML = `
-            <div class="error">Erro: ${error.message}</div>
-        `;
-        toastr.error('Mensagem não Enviada! Devido a Problemas Internos. \n Entre em contato por acazzoacessoria@gmail.com');
-    });
-});
-</script>
 
 </div>
 

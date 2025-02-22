@@ -123,49 +123,46 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <!-- Formulário -->
-<form id="meuFormulario" action="https://script.google.com/macros/s/AKfycbz9v_3Tr4FsrevUixF71ie_mmLgtUtEIet6AWGbqSPCv6UnwCS1L_Rv_vWIKngU1HTo/exec" method="post">
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="name" placeholder="Seu Nome" required>
-
-    <label for="email">E-mail:</label>
-    <input type="email" id="email" name="email" placeholder="seuemail@gmail.com" required>
-
-    <label for="contato">Contato:</label>
-    <input type="text" id="contato" name="phone" placeholder="+55 (12) 91234-0123" required>
-
-    <label for="mensagem">Mensagem:</label>
-    <textarea id="mensagem" name="message" rows="5" required></textarea>
-
-    <button id="button" type="submit">Enviar</button>
+<form id="myForm">
+    <input type="text" name="name" placeholder="Nome" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="tel" name="phone" placeholder="Telefone">
+    <textarea name="message" placeholder="Mensagem" required></textarea>
+    <button type="submit">Enviar</button>
 </form>
 
-<!-- Div para exibir a resposta -->
-<div id="response"></div>
+<div id="message"></div>
 
 <script>
-// Configuração do Toastr
-
-const button = document.getElementById("button");
-button.addEventListener("click", () => {
-    const formData = {
-        nome: document.getElementById("nome").value.trim(),
-        email: document.getElementById("email").value.trim(),
-        contato: document.getElementById("contato").value.trim(),
-        mensagem: document.getElementById("mensagem").value.trim()
-    };
-
-    if (formData.nome && formData.email && formData.contato && formData.mensagem) {
-        toastr.success("A operação foi realizada com sucesso!", "Sucesso", {
-            timeOut: 5000,
-            progressBar: true,
-            closeButton: true,
-        });
-    } else {
-        toastr.error("Por favor, preencha todos os campos!", "Erro");
-    }
+document.getElementById('myForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Impede o envio tradicional
+    
+    const formData = new FormData(this);
+    const url = 'https://script.google.com/macros/s/AKfycbyUk-Fau9fcv14kXLNXhjq44YSgb4fxcPqi3XuZJaXwlL3OfLngXibXAUGMu77apdZq/exec'; // URL do seu Web App publicado
+    
+    fetch(url, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if(data.status === 'success') {
+            // document.getElementById('message').innerHTML = `
+            //     <div class="success">${data.message}</div>
+            // `;
+            this.reset(); // Limpa o formulário
+            toastr.success(`${data.message}`);
+        } else {
+            throw new Error(data.message);
+        }
+    })
+    .catch(error => {
+        document.getElementById('message').innerHTML = `
+            <div class="error">Erro: ${error.message}</div>
+        `;
+        toastr.error('Mensagem não Enviada! Devido a Problemas Internos. \n Entre em contato por acazzoacessoria@gmail.com');
+    });
 });
-
-
 </script>
 
 </div>

@@ -71,7 +71,8 @@ p {
 }
 
 footer{
-    background-color: var(--redbg);
+    background-color: #682323;
+    color: #fff;
 }
 footer div{
     padding: 50px;
@@ -84,5 +85,5 @@ footer div{
 footer a{
     text-decoration: none;
     cursor: pointer;
-    color: #000;
+    color: #ffffff;
 }

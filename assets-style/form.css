@@ -9,6 +9,7 @@
     padding: 10px 20px;
     border-radius: 10px;
     border: 2px solid #fff;
+    font-family: "Poppins", "Arial", serif;
     
 }
 #myForm button{
@@ -17,8 +18,6 @@
     color: #fff;
     padding: 10px 20px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
-/* #myForm input::-moz-focus-inner{
-
-} */

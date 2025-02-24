@@ -13,7 +13,12 @@ main h1{
 }
 
 .card-prod {
-    background: var(--redbg);
+    background: rgba(255, 255, 255, 0.2); /* Cor com transparência */
+    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para navegadores WebKit */
+    border-radius: 15px; /* Cantos arredondados */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borda sutil */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     padding: 100px 20px 20px 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);

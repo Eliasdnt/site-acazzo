@@ -1,9 +1,7 @@
 .container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 50px;
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", Arial, sans-serif;
     max-width: 1600px;
     margin: 0 auto;
 }
@@ -13,7 +11,7 @@
 }
 
 .content h1 {
-    font-size: 48px;
+    font-size: 4rem;
     font-weight: bold;
     text-align: start;
 }
@@ -86,4 +84,52 @@ footer a{
     text-decoration: none;
     cursor: pointer;
     color: #ffffff;
+}
+
+@media (max-width: 1200px) {
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 50px;
+    }
+
+}
+@media (max-width:950px) {
+    .container{
+        grid-template-columns: 1fr;
+    }
+    .content{
+        max-width: 100%;
+        margin: 15px;
+    }
+  
+    .highlights{
+        display: none;
+    }
+
+    footer p, h2{
+        font-size: 15px;
+    }
+    footer div{
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width:600px) {
+.content h1{
+    font-size: 2rem;
+    text-align: justify;
+}
+.content p{
+    text-align: justify;
+}
+main h1{
+    font-size: 2rem;
+
+}
+.container{
+    padding: 0;
+}
+
+
 }

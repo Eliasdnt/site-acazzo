@@ -9,3 +9,33 @@
 .informs iframe{
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 1300px) {
+    .informs {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin: 40px;
+    }
+
+    .informs div iframe{
+        display: grid;
+        justify-items: center;
+    }
+}
+
+@media (max-width:700px) {
+    .informs iframe{
+        width: 450px;
+        justify-items: center;
+    }
+    .informs{
+        margin: 15px;
+    }
+}
+
+@media (max-width:500px) {
+    .informs iframe{
+        width: 300px;
+        justify-items: center;
+    }
+}

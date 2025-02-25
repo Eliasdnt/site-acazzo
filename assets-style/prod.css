@@ -9,7 +9,7 @@ main h1{
     text-align: center;
     margin-top: 60px;
     margin-bottom: 60px;
-    font-size: 48px;
+    font-size: 4rem;
 }
 
 .card-prod {
@@ -64,3 +64,13 @@ main h1{
     text-align: center;
     margin-bottom: 45px;
 }
+
+
+@media (max-width:600px) {
+   
+    main h1{
+        font-size: 2rem;
+    
+    }
+    
+    }

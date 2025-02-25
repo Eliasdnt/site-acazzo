@@ -1,6 +1,6 @@
 header{
-    background: linear-gradient(to top, #4D0000 40%, #0D0000 90%, #000000 100%);
-
+    /* background: linear-gradient(to top, #4D0000 40%, #0D0000 90%, #000000 100%); */
+    background-color: #4D0000;
     text-align: center;
     padding: 15px 15px;
     height: 80vh;
@@ -78,4 +78,39 @@ header .card li{
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+
+@media (max-width:1200px) {
+    .menu{
+        width: 400px;
+    }
+    header .card li{
+        padding: 15px;
+        flex-wrap: wrap;
+    }
+    header .card{
+        flex-wrap: wrap;
+    }
+    header .card li img{
+        width: 30px;
+    }
+    header h1{
+        font-size: 60px;
+    }
+    header{
+        height: 50vh;;
+    }
+}
+
+@media (max-width:600px) {
+    .menu{
+        width: 300px;
+        gap:5px;
+    }
+    header .card{
+        display: none;
+    }
+    
+  
 }

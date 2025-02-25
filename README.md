@@ -39,6 +39,5 @@ Este projeto é privado e todos os direitos estão reservados à **Acazzo Assess
 Para mais informações, entre em contato com nossa equipe:
 
 - **E-mail:** acazzoassessoria@gmail.com
-- **Telefone:** (xx) xxxx-xxxx  
 - **Website:** Essa pagina será o futuro website
 ---

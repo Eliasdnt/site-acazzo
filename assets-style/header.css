@@ -81,7 +81,7 @@ header .card li{
 }
 
 
-@media (max-width:1200px) {
+@media (max-width:1450px) {
     .menu{
         width: 400px;
     }
@@ -100,6 +100,9 @@ header .card li{
     }
     header{
         height: 50vh;;
+    }
+    header .card{
+        display: none;
     }
 }
 

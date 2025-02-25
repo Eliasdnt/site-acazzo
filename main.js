@@ -76,3 +76,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 scrollSuave();
     
+
+function Vermais() {
+    const cards = document.querySelectorAll(".card-prod");
+    const btn = document.getElementById("veja");
+    
+    btn.addEventListener("click", () => {
+        const lastThreeCards = [...cards].slice(-2); // Seleciona os últimos 3 cards
+        let isHidden = lastThreeCards.some(card => card.style.display === "none" || card.style.display === "");
+    
+        lastThreeCards.forEach(card => {
+            card.style.display = isHidden ? "grid" : "none";
+        });
+    
+        btn.innerText = isHidden ? "Veja Menos Produtos" : "Veja Mais Produtos";
+    });
+    
+    
+
+   
+}
+Vermais();

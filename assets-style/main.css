@@ -1,5 +1,6 @@
 .container {
     display: flex;
+    justify-content: space-between;
     padding: 50px;
     font-family: "Poppins", Arial, sans-serif;
     max-width: 1600px;
